@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoAire - Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">🌱 EcoAire App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mapa.html">Mapa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calculadora.html">Calculadora</a></li>
+                    <li class="nav-item"><a class="nav-link" href="guia.html">Guía Verde</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-header text-center my-3">
+        <div class="container">
+            <h1>EcoAire: Monitoreo en Tiempo Real</h1>
+            <p class="lead">Consulta la calidad del aire y protege tu salud</p>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="input-group mb-3">
+                    <input type="text" id="inputCiudad" class="form-control" placeholder="Escribe una ciudad (ej. mexico, guadalajara)...">
+                    <button class="btn btn-success" onclick="obtenerClimaAQI(document.getElementById('inputCiudad').value)" data-bs-toggle="tooltip" title="Consulta los datos en tiempo real">Buscar AQI</button>
+                </div>
+                <div id="resultado-api"></div>
+            </div>
+        </div>
+
+        <h3 class="mt-5 mb-3">Ciudades Destacadas</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card card-aqi aqi-bueno h-100 shadow-sm p-3">
+                    <div class="card-body">
+                        <h5 class="card-title">CDMX - Centro</h5>
+                        <p class="display-6 fw-bold">AQI 35</p>
+                        <span class="badge bg-light text-success">Bueno</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-aqi aqi-moderado h-100 shadow-sm p-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Guadalajara</h5>
+                        <p class="display-6 fw-bold">AQI 62</p>
+                        <span class="badge bg-light text-warning">Moderado</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-aqi aqi-dañino h-100 shadow-sm p-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Monterrey</h5>
+                        <p class="display-6 fw-bold">AQI 110</p>
+                        <span class="badge bg-light text-danger">Malo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="mb-0">© 2026 EcoAire - Datos provistos por WAQI API RESTful</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
